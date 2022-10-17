@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=M+PLUS+Rounded+1c&family=Poppins&display=swap');
+
+*{
+    font-family: 'poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+}
+
+.highscores {
+    flex: 1;
+}
+
+.timer {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+#start {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+
+.start-quiz {
+    text-align: center;
+    padding: 50px;
+}
+
+.quiz-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+#questions {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.submit-button {
+    text-align: center;
+    padding-bottom: 25px;
+}
