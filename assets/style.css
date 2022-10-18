@@ -47,7 +47,11 @@ a.highscores {
     flex-direction: column;
 }
 
-.start-bttn button{
+.start-bttn,
+.restart,
+.clear,
+.submit,
+ button{
     position: absolute; 
     font-size: larger;
     color: #e5eaf5;

@@ -12,7 +12,7 @@
 <body>
     <div id="startQuiz">
         <header class="header">
-            <a href="/highscores.html" class="highscores" >View Highscores</a>
+            <a href="/highscores.html" class="highscores">View Highscores</a>
             <div class="timer">
                 <div class="time-text" style="text-align:end;">Time Left:</div>
                 <div class="timer-sec">0</div>
@@ -30,16 +30,28 @@
                 <div class="question">
                     <!-- JavaScript -->
                 </div>
-                <div class= "answers">
+                <div class="answers">
                     <!-- JavaScript -->
                 </div>
             </section>
-       </div>
-       <div class="end-screen hide">
-        <section>
-            end!!! input 
-        </section>
-   </div>
+        </div>
+        <div class="end-screen hide">
+            <section class="endGame">
+                <div>All Done!</div>
+                <p>Your final score is 0.</p>
+                <div class="Initials">
+                    <p>Enter initials:</p><button class = "submit">Submit</button>
+                </div>
+            </section>
+        </div>
+        <div class="scores hide">
+            <section class="score">
+                <div class="buttons">
+                    <button class="restart">Replay Quiz</button>
+                    <button class="clear">Clear Highscores</button>
+                </div>
+            </section>
+        </div>
         <script src="assets/script.js"></script>
 </body>
 
