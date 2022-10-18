@@ -34,7 +34,7 @@ const quizInfo = [
 ];
 
 const start_bttn = document.querySelector(".start-bttn button");
-const quiz = document.getElementById('quiz')
+const quiz = document.getElementById('.quiz')
 const quiz_box = document.querySelector(".quiz-box");
 const start_quiz = document.querySelector(".start-quiz");
 const quizTimer = document.querySelector(".timer-sec");
@@ -61,7 +61,6 @@ function startTimer() {
     }, 1000)
 }
 
-
 start_bttn.onclick = () => {
     console.log(start_quiz, quiz_box)
     // start_quiz.classList.add("hide"); // hide start elements - add hide
@@ -69,20 +68,23 @@ start_bttn.onclick = () => {
     start_quiz.style.display = "none"
     quiz_box.style.display = "block"
     startTimer(); // time starts and dsplays - setinterval
-    loadQuiz();
-    // show the one question
+    loadQuiz(); {
+      
 };
 
 loadQuiz()
-function loadQuiz() {
+function loadQuiz() { //new question pops up
     deselectAnswers()
     const currentquizInfo = quizInfo[currentQuiz];
-    quizQuestion.innerText = currentquizInfo.question;
+    quizQuestion.innerText = currentquizInfo.question; 
     a_text.innerText = currentquizInfo.a;
     b_text.innerText = currentquizInfo.b;
     c_text.innerText = currentquizInfo.c;
     d_text.innerText = currentquizInfo.d;
 }
+
+
+
 function deselectAnswers() {
     quizAnswer.forEach(quizAnswer => quizAnswer.checked = false)
 }
@@ -96,10 +98,10 @@ function getSelected() {
     return answer
 }
 submitBtn.addEventListener('click', () => {
-    const answer = getSelected()
+    const answer = !getSelected()
     if (answer) {
         if (answer === quizInfo[currentQuiz].correct) {
-            score++
+            timer = - 10  //timer decreases?
         }
         currentQuiz++
         if (currentQuiz < quizInfo.length) {
@@ -111,9 +113,9 @@ submitBtn.addEventListener('click', () => {
            `
         }
     }
-})
+});
+}
 
 // const quiz= document.getElementById('quiz')
 
-// const questionEl = document.getElementById('question')
-
+// const questionEl = document.getElementById('question'//
