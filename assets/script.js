@@ -52,6 +52,10 @@ start_bttn.onclick = ()=>{
 
 };
 
+
+//add EVENT LISTENER FOR ANSWERS 
+
+
 //const result_box = document.querySelector(".result_box");
 //const time_line = document.querySelector("header .time_line");
 //const timeText = document.querySelector(".timer .time_left_txt");
