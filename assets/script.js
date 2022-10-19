@@ -102,7 +102,7 @@ function getSelected() {
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     if (answer) {
-        if (answer === quizInfo[currentQuiz].correct) {
+        if (answer === quizInfo[currentQuiz].answer) {
             score++  //add timer decreases?
         }
         currentQuiz++
