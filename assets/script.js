@@ -70,15 +70,15 @@ start_bttn.onclick = () => {
     start_quiz.style.display = "none"
     quiz_box.style.display = "block"
     startTimer(); // time starts and dsplays - setinterval
-    loadQuiz(); {
-      
+    loadQuiz();
+
 };
 
 
 function loadQuiz() { //new question pops up
     deselectAnswers()
     const currentquizInfo = quizInfo[currentQuiz];
-    quizQuestion.innerText = currentquizInfo.question; 
+    quizQuestion.innerText = currentquizInfo.question;
     a_text.innerText = currentquizInfo.a;
     b_text.innerText = currentquizInfo.b;
     c_text.innerText = currentquizInfo.c;
@@ -106,7 +106,7 @@ submitBtn.addEventListener('click', () => {
             score++  //add timer decreases?
         }
         currentQuiz++
-        
+
         if (currentQuiz < quizInfo.length) {
             loadQuiz()
         } else {
@@ -116,16 +116,16 @@ submitBtn.addEventListener('click', () => {
            `
         }
     }
-    if (answer) {
-        if (answer === quizInfo[currentQuiz].answer) {
-            currentQuiz.quizInfo.add('wrong')
-            currentQuiz.addEventListener('click', () => {
-                clearInterval(timer)
-                timeLeft.innerHTML = -10
-                timer = setInterval(myClock, 1000);
-    })};
-    
+if (answer) {
+    if (answer === quizInfo[currentQuiz].answer) {
+        currentQuiz.quizInfo.add('wrong')
+        currentQuiz.addEventListener('click', () => {
+            clearInterval(timer)
+            timeLeft.innerHTML = -10
+            timer = setInterval(myClock, 1000);
+        })
+    }
+};
 
-// const quiz= document.getElementById('quiz')
-
-// const questionEl = document.getElementById('question')
+//
+// 
