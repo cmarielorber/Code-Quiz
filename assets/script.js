@@ -116,16 +116,16 @@ submitBtn.addEventListener('click', () => {
            `
         }
     }
-    // if (answer) {
-    //     if (answer === quizInfo[currentQuiz].correct) {
-    //         currentQuiz.quizInfo.add('wrong')
-    //         currentQuiz.addEventListener('click', () => {
-    //             clearInterval(timer)
-    //             timeLeft.innerHTML = -10
-    //             timer = setInterval(myClock, 1000);
+    if (answer) {
+        if (answer === quizInfo[currentQuiz].answer) {
+            currentQuiz.quizInfo.add('wrong')
+            currentQuiz.addEventListener('click', () => {
+                clearInterval(timer)
+                timeLeft.innerHTML = -10
+                timer = setInterval(myClock, 1000);
     })};
     
 
 // const quiz= document.getElementById('quiz')
 
-// const questionEl = document.getElementById('question'//)
+// const questionEl = document.getElementById('question')
