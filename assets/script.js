@@ -51,6 +51,8 @@ let timeLeft = 60;
 let currentQuiz = 0;
 let score = 0;
 
+
+
 function startTimer() {
     timer = setInterval(function () {
         timeLeft--;
@@ -72,7 +74,7 @@ start_bttn.onclick = () => {
       
 };
 
-loadQuiz()
+
 function loadQuiz() { //new question pops up
     deselectAnswers()
     const currentquizInfo = quizInfo[currentQuiz];

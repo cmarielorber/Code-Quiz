@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=M+PLUS+Rounded+1c&family=Poppins&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,9 +9,9 @@
 }
 
 body {
-  
-        background: #494D5F ;
-    }
+
+    background: #494D5F;
+}
 
 
 
@@ -27,7 +27,7 @@ a.highscores {
 }
 
 .timer {
-    
+
     flex: 1;
     display: flex;
     justify-content: flex-end;
@@ -48,8 +48,8 @@ a.highscores {
 }
 
 .start-bttn,
- button{
-    position: absolute; 
+button {
+    position: absolute;
     /* margin: 25px; */
     font-size: larger;
     color: #e5eaf5;
@@ -59,12 +59,13 @@ a.highscores {
     background: #8458B3;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, .5), 
-                0 8px 5px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 5px 0 rgba(0, 0, 0, .5),
+        0 8px 5px 0 rgba(0, 0, 0, 0.3);
 }
-.submitBtn{
+
+.submitBtn {
     text-align: center;
- }
+}
 
 .restart,
 .viewScores {
@@ -77,14 +78,28 @@ a.highscores {
     background: #8458B3;
     cursor: pointer;
     transform: translate(-50%, -50%);
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 
-                0 10px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2),
+        0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 p,
 ul {
     font-size: large;
     text-align: center;
+    list-style-type: none;
+}
+
+ul li label {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #04adc4;
+}
+
+button:focus {
+    outline: none;
+    background-color: #d024eb;
 }
 
 
