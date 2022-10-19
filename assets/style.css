@@ -48,11 +48,9 @@ a.highscores {
 }
 
 .start-bttn,
-.restart,
-.clear,
-.submit,
  button{
     position: absolute; 
+    /* margin: 25px; */
     font-size: larger;
     color: #e5eaf5;
     outline: none;
@@ -64,13 +62,9 @@ a.highscores {
     box-shadow: 0 8px 5px 0 rgba(0, 0, 0, .5), 
                 0 8px 5px 0 rgba(0, 0, 0, 0.3);
 }
-
-.quiz_box.activeQuiz {
-    opacity: 1;
-    z-index: 5;
-    pointer-events: auto;
-    transform: translate(-50%, -50%) scale(1);
-}
+.submitBtn{
+    text-align: center;
+ }
 
 .restart,
 .viewScores {
@@ -87,27 +81,27 @@ a.highscores {
                 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+p,
+ul {
+    font-size: large;
+    text-align: center;
+}
 
 
-.welcome {
+.welcome,
+#question {
     font-size: x-large;
     text-align: center;
     color: #d0bdf4
 }
 
-p {
-    font-size: large;
-    text-align: center;
-    padding: 25px;
-}
-
-
-.start-quiz {
+.start-quiz,
+#question {
     text-align: center;
     padding: 50px;
 }
 
-.quiz_box header{
+/* .quiz_box header{
     position: relative;
     z-index: 2;
     height: 70px;
@@ -118,7 +112,7 @@ p {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
-}
+} */
 
 #questions {
     text-align: center;

@@ -33,16 +33,16 @@ const quizInfo = [
     },
 ];
 
-const start_bttn = document.querySelector(".start-bttn button");
+const start_bttn = document.querySelector(".start-bttn");
 const quiz = document.getElementById('.quiz')
 const quiz_box = document.querySelector(".quiz-box");
 const start_quiz = document.querySelector(".start-quiz");
 const quizTimer = document.querySelector(".timer-sec");
-const quizQuestion = document.querySelector(".question");
-const a_text = document.getElementById('.a_text')
-const b_text = document.getElementById('.b_text')
-const c_text = document.getElementById('.c_text')
-const d_text = document.getElementById('.d_text')
+const quizQuestion = document.querySelector("#question");
+const a_text = document.getElementById('#a_text')
+const b_text = document.getElementById('#b_text')
+const c_text = document.getElementById('#c_text')
+const d_text = document.getElementById('#d_text')
 const quizAnswer = document.querySelectorAll('.answer');
 const submitBtn = document.getElementById('.submit')
 
