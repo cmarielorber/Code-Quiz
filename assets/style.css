@@ -82,10 +82,15 @@ button {
         0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-p,
-ul {
+p {
     font-size: large;
     text-align: center;
+    list-style-type: none;
+}
+
+ul {
+    font-size: large;
+    
     list-style-type: none;
 }
 

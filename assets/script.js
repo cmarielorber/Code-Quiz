@@ -34,17 +34,17 @@ const quizInfo = [
 ];
 
 const start_bttn = document.querySelector(".start-bttn");
-const quiz = document.getElementById('.quiz')
+const quiz = document.getElementById('quiz')
 const quiz_box = document.querySelector(".quiz-box");
 const start_quiz = document.querySelector(".start-quiz");
 const quizTimer = document.querySelector(".timer-sec");
 const quizQuestion = document.querySelector("#question");
-const a_text = document.getElementById('#a_text')
-const b_text = document.getElementById('#b_text')
-const c_text = document.getElementById('#c_text')
-const d_text = document.getElementById('#d_text')
+const a_text = document.getElementById('a_text')
+const b_text = document.getElementById('b_text')
+const c_text = document.getElementById('c_text')
+const d_text = document.getElementById('d_text')
 const quizAnswer = document.querySelectorAll('.answer');
-const submitBtn = document.getElementById('.submit')
+const submitBtn = document.getElementById('submit')
 
 let timer;
 let timeLeft = 60;
@@ -100,17 +100,18 @@ function getSelected() {
     return answer
 }
 submitBtn.addEventListener('click', () => {
-    const answer = !getSelected()
+    const answer = getSelected()
     if (answer) {
         if (answer === quizInfo[currentQuiz].correct) {
-            timer = - 10  //timer decreases?
+            score++  //add timer decreases?
         }
         currentQuiz++
+        
         if (currentQuiz < quizInfo.length) {
             loadQuiz()
         } else {
             quiz.innerHTML = `
-           <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+           <h2>You answered ${score}/${quizInfo.length} questions correctly</h2>
            <button onclick="location.reload()">Reload</button>
            `
         }
