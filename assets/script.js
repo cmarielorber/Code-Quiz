@@ -24,13 +24,28 @@ const quizInfo = [
         answer: "a",
     },
     {
-        question: "What is 'Hello'?",
-        a: "boolean;variable",
-        b: "string; object",
-        c: "number; object",
+        question: "What is an array?",
+        a: "a standalone entity, with properties and type",
+        b: "a Pitbull",
+        c: "a single variable that is used to store different elements",
         d: "none of the above",
-        answer: "b",
+        answer: "c",
     },
+    {question: "What are elements?",
+    a: "buttons",
+    b: "check boxes",
+    c: "text",
+    d: "all of the above",
+    answer: "d",
+},
+{
+    question: "What is a method?",
+    a: "an algorithm",
+    b: "a command that tells how an object is to be acted upon",
+    c: "a browser window",
+    d: "all of the above",
+    answer: "b",
+}
 ];
 
 const start_bttn = document.querySelector(".start-bttn");
@@ -59,9 +74,21 @@ function startTimer() {
         quizTimer.textContent = timeLeft;
         if (timeLeft <= 0) {
             clearInterval(timer); //want to call end quiz function here
-        }
-    }, 1000)
+        } 
+    }, 1000),
 }
+    if (timerCount === 0) {
+        // Clears interval
+        clearInterval(timer);
+        loseGame();
+      }
+    }, 1000);
+
+function loseGame() {
+    wordBlank.textContent = "Try Again.";
+    <button onclick="location.reload()">Redo</button>;
+
+  }
 
 start_bttn.onclick = () => {
     console.log(start_quiz, quiz_box)
@@ -69,7 +96,7 @@ start_bttn.onclick = () => {
     // quiz_box.classList.remove("hide"); // show quiz box - remove hide
     start_quiz.style.display = "none"
     quiz_box.style.display = "block"
-    startTimer(); // time starts and dsplays - setinterval
+    startTimer(); // time starts and displays - setinterval
     loadQuiz();
 
 };
@@ -107,10 +134,9 @@ submitBtn.addEventListener('click', () => {
         if (answer === quizInfo[currentQuiz].answer) {
             score++
         } 
-        else {  //add timer decreases?
-            answer = !quizInfo[currentQuiz].answer;{
+        else {  //add timer decreases
                 timeLeft = timeLeft-10;            
-        }}
+        }
         currentQuiz++ 
        
 
