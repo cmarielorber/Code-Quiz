@@ -50,7 +50,6 @@ a.highscores {
 .start-bttn,
 button {
     position: absolute;
-    /* margin: 25px; */
     font-size: larger;
     color: #e5eaf5;
     outline: none;
@@ -82,16 +81,22 @@ button {
         0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-p {
+p{
     font-size: large;
     text-align: center;
     list-style-type: none;
 }
 
-ul {
-    font-size: large;
-    
+h2{
+    font-size: x-large;
+    text-align: center;
     list-style-type: none;
+    color: #d0bdf4;
+    padding: 50px;
+}
+
+ul{
+    list-style-type: none;   
 }
 
 ul li label {
@@ -120,6 +125,24 @@ button:focus {
     text-align: center;
     padding: 50px;
 }
+.quiz-main, 
+.quiz-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#fname,
+.restart{
+    display: inline;
+    position: absolute;
+    color: #d0bdf4
+}
+
+.initials{ 
+    color: #d0bdf4 
+}
 
 /* .quiz_box header{
     position: relative;
@@ -142,3 +165,4 @@ button:focus {
 .hide {
     display: none;
 }
+

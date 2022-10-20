@@ -12,7 +12,7 @@
 <body>
     <div id="startQuiz">
         <header class="header">
-            <a href="/highscores.html" class="highscores">View Highscores</a>
+            <!-- <a href="/highscores.html" class="highscores">View Highscores</a> -->
             <div class="timer">
                 <p class="time-text" style="text-align:end;">Time Left:</p>
                 <p class="timer-sec">0</p>
@@ -49,24 +49,24 @@
             </ul>
             <div class = submitBtn style="margin: 30px;"><button id="submit">Submit</button></div>
         </div>
-        <div class="end-screen hide">
+        <!-- <div class="end-screen hide">
             <section class="endGame">
-                <div>All Done!</div>
-                <p>Your final score is 0.</p>
                 <div class="Initials">
-                    <p>Enter initials:</p><button id="submit">Submit</button>
+                   
                 </div>
             </section>
-        </div>
+        </div> -->
         <div class="scores hide">
             <section class="score">
-                <div class="buttons">
-                    <button class="restart">Replay Quiz</button>
-                    <button class="clear">Clear Highscores</button>
-                </div>
-            </section>
+                <form action="initials"></form>
+                <div class = "scores">
+                    <label class = "initials" for="name">Initials:</label>
+                    <input type="text" id="name" name="name"></input>
+                <button onclick="location.reload()">Redo</button>
+            </div>
         </div>
         <script src="assets/script.js"></script>
 </body>
 
 </html>
+ <!-- <button class="clear">Clear Highscores</button> -->

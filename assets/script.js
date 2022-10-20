@@ -31,6 +31,22 @@ const quizInfo = [
         d: "none of the above",
         answer: "b",
     },
+    {
+        question: "What is my next question'?",
+        a: "boolean;variable",
+        b: "string; object",
+        c: "number; object",
+        d: "none of the above",
+        answer: "b",
+    },
+    {
+        question: "What is 'Hello'?",
+        a: "boolean;variable",
+        b: "string; object",
+        c: "number; object",
+        d: "none of the above",
+        answer: "b",
+    },
 ];
 
 const start_bttn = document.querySelector(".start-bttn");
@@ -83,6 +99,7 @@ function loadQuiz() { //new question pops up
     b_text.innerText = currentquizInfo.b;
     c_text.innerText = currentquizInfo.c;
     d_text.innerText = currentquizInfo.d;
+    d_text.innerText = currentquizInfo.d;
 }
 
 
@@ -99,11 +116,14 @@ function getSelected() {
     })
     return answer
 }
+
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     if (answer) {
         if (answer === quizInfo[currentQuiz].answer) {
-            score++  //add timer decreases?
+            score++
+        } else {
+            
         }
         currentQuiz++
 
@@ -112,20 +132,25 @@ submitBtn.addEventListener('click', () => {
         } else {
             quiz.innerHTML = `
            <h2>You answered ${score}/${quizInfo.length} questions correctly</h2>
-           <button onclick="location.reload()">Reload</button>,
-           `
+           <p> Enter your initials<p>,
+           <section class="score">
+           <form action="initials"></form>
+           <div class = "scores">
+               <label class = "initials" for="name">Initials:</label>
+               <input type="text" id="name" name="name"></input>
+           <button onclick="location.reload()">Redo</button>`
+        }
+    };
+
+    if (answer) {//add timer decreases?
+        if (answer === quizInfo[currentQuiz].answer) {
+            currentQuiz.quizInfo.add('wrong')
+            currentQuiz.addEventListener('click', () => {
+                clearInterval(timer)
+                timeLeft.innerHTML = -10
+                timer = setInterval(timeLeft, 1000);
+            })
         }
     }
-if (answer) {
-    if (answer === quizInfo[currentQuiz].answer) {
-        currentQuiz.quizInfo.add('wrong')
-        currentQuiz.addEventListener('click', () => {
-            clearInterval(timer)
-            timeLeft.innerHTML = -10
-            timer = setInterval(myClock, 1000);
-        })
-    }
-};
+})
 
-//
-// 
