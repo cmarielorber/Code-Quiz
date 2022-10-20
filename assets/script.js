@@ -107,12 +107,11 @@ submitBtn.addEventListener('click', () => {
         if (answer === quizInfo[currentQuiz].answer) {
             score++
         } 
-        currentQuiz++
         else {  //add timer decreases?
             answer = !quizInfo[currentQuiz].answer;{
                 timeLeft = timeLeft-10;            
         }}
-
+        currentQuiz++ 
        
 
         if (currentQuiz < quizInfo.length) {
