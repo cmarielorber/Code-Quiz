@@ -133,6 +133,15 @@ button:focus {
     align-items: center;
 }
 
+#questions {
+    text-align: center;
+}
+
+
+.hide {
+    display: none;
+}
+
 #fname,
 .restart{
     display: inline;
@@ -140,9 +149,19 @@ button:focus {
     color: #d0bdf4
 }
 
-.initials{ 
-    color: #d0bdf4 
+.scores{
+    display: flex;
+    display: column;;
 }
+
+.initialsBox {
+    display: inline;
+}
+
+
+/* .initials{ 
+    color: #d0bdf4 
+} */
 
 /* .quiz_box header{
     position: relative;
@@ -156,13 +175,3 @@ button:focus {
     justify-content: space-between;
     box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
 } */
-
-#questions {
-    text-align: center;
-}
-
-
-.hide {
-    display: none;
-}
-
