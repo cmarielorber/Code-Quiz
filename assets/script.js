@@ -68,31 +68,30 @@ let currentQuiz = 0;
 let score = 0;
 
 
-function loseGame() {
+function endGame() {
     if (timeLeft === 0) {
         quiz.innerHTML = `
-        <h2>Try Again!</h2>
-        <button id = "redo" onclick="location.reload()">Redo</button>`
-        
- }
+        <div =outTime><h1>OUT OF TIME!! TRY AGAIN!!!</h1>
+        <button id = "redo" onclick="location.reload()">Redo</button></div>,`
+        clearInterval(timer);  
+    }
 }
     
 
 
 function startTimer() {
     timer = setInterval(function () {
-        timeLeft--;
-        quizTimer.textContent = timeLeft;
-        if (timeLeft <= 0) {
-            clearInterval(timer); //want to call end quiz function here
-        }
+      if (timeLeft <= 0) {
+        timeLeft = 0;
+        clearInterval(timer); //want to call end quiz function here
+        endGame();
+      } else {
+          timeLeft--;
+      }
+      quizTimer.textContent = timeLeft;
     }, 1000);
-    if (timeLeft === 0) {
-        // Clears interval
-        clearInterval(timer);
-        loseGame();
-    }
- } 1000;
+  };
+
 
 
 
@@ -152,16 +151,18 @@ submitBtn.addEventListener('click', () => {
         } else {
             quiz.innerHTML = `
            <h2>You answered ${score}/${quizInfo.length} questions correctly</h2>
-           <h3> Enter your initials<h3>,
+           <h3>✨Enter your initials and check out the leader board✨<h3>,
            <section class="score">
            <form action="initials"></form>
            <div class = "scores">
             <div class = "initialsBox"> <label class = "initials" for="name">Initials:</label>
                <input type="text" id="name" name="name"></input>
                </div>
-           <button id="submit">Submit</button></div>
-           <button id = "redo" onclick="location.reload()">Redo</button>`
-        }
-    }
-})
+        <div class = end-buttons>
+           <button id="submit">Submit</button>
+           <button id = "redo" onclick="location.reload()">Redo</button></div>`
+          
+       
+    };
+}});
 

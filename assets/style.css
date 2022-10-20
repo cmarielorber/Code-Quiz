@@ -151,12 +151,47 @@ button:focus {
 
 .scores{
     display: flex;
-    display: column;;
+    display: column;
+    justify-content: center;
 }
 
 .initialsBox {
     display: inline;
 }
+
+h3{
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.outTime{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: xx-large;
+    color: aqua;
+    margin-top: 500px;
+}
+
+#redo{
+    top: 600px;
+    width: 100px;
+}
+
+#submit{
+    top: 600px;
+    width: 100px;
+}
+
+
+
+
 
 
 /* .initials{ 
