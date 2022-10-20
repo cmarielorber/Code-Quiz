@@ -63,15 +63,21 @@ const quizAnswer = document.querySelectorAll('.answer');
 const submitBtn = document.getElementById('submit')
 
 let timer;
-let timeLeft = 60;
+let timeLeft = 40;
 let currentQuiz = 0;
 let score = 0;
 
 
 function loseGame() {
-    wordBlank.textContent = "Try Again";
-    start_bttn.enable=true;
+    if (timeLeft === 0) {
+        quiz.innerHTML = `
+        <h2>Try Again!</h2>
+        <button id = "redo" onclick="location.reload()">Redo</button>`
+        
+ }
 }
+    
+
 
 function startTimer() {
     timer = setInterval(function () {
@@ -81,7 +87,7 @@ function startTimer() {
             clearInterval(timer); //want to call end quiz function here
         }
     }, 1000);
-    if (timerLeft === 0) {
+    if (timeLeft === 0) {
         // Clears interval
         clearInterval(timer);
         loseGame();
