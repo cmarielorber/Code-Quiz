@@ -4,7 +4,7 @@ week 4 homework- create quiz with HTML, CSS, JS
 
 ## Description
 
-We were instructed with creating a game using HTML, CSS and new JS concepts. We were to have a start button, timer, questions/answers, time subtracted when an incorrect answer is chosen which may result with a game over, and saving scores with initials. My game is to beat the clock...so a bit different than score time.
+We were instructed with creating a game using HTML, CSS and new JS concepts. We were to have a start button, timer, questions/answers, time subtracted when an incorrect answer is chosen which may result with a game over, and saving scores with initials. My game is to beat the clock...so a bit different than the timer as the score. I also couldn't figure out how to get the scores to load on a new page and my brain hurts. This is as good as it's going to get for my first true Java experience. 
 
 
 ![cmarielorber github io_Code-Quiz_(1)](https://user-images.githubusercontent.com/109984761/197048667-b6a692de-b724-4462-becb-a9372f8837bb.png)
