@@ -60,10 +60,12 @@ const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const quizAnswer = document.querySelectorAll('.answer');
-const submitBtn = document.getElementById('submit')
+const submitBtn = document.getElementById('submit');
+const highscores = 'highScores';
+
 
 let timer;
-let timeLeft = 40;
+let timeLeft = 50;
 let currentQuiz = 0;
 let score = 0;
 
@@ -72,7 +74,7 @@ function endGame() {
     if (timeLeft === 0) {
         quiz.innerHTML = `
         <div =outTime><h1>OUT OF TIME!! TRY AGAIN!!!</h1>
-        <button id = "redo" onclick="location.reload()">Redo</button></div>,`
+        <button id = "redoTime" onclick="location.reload()">Redo</button></div>`
         clearInterval(timer);  
     }
 }
@@ -80,8 +82,12 @@ function endGame() {
 
 
 function startTimer() {
-    timer = setInterval(function () {
-      if (timeLeft <= 0) {
+    timer = setInterval(function () { 
+        if(currentQuiz >= 6) {
+            clearInterval(timer);
+
+        }
+      else if (timeLeft <= 0) {
         timeLeft = 0;
         clearInterval(timer); //want to call end quiz function here
         endGame();
@@ -127,10 +133,10 @@ function getSelected() {
     let answer
     quizAnswer.forEach(quizAnswer => {
         if (quizAnswer.checked) {
-            answer = quizAnswer.id
+            answer = quizAnswer.id;
         }
     })
-    return answer
+    return answer;
 }
 
 submitBtn.addEventListener('click', () => {
@@ -144,25 +150,55 @@ submitBtn.addEventListener('click', () => {
             timeLeft = timeLeft - 10;
         }
         currentQuiz++
-
+console.log("currentQuiz", currentQuiz)
 
         if (currentQuiz < quizInfo.length) {
             loadQuiz()
         } else {
             quiz.innerHTML = `
            <h2>You answered ${score}/${quizInfo.length} questions correctly</h2>
-           <h3>✨Enter your initials and check out the leader board✨<h3>,
+           <h3>✨Enter your initials and check out the leader board✨<h3>
            <section class="score">
-           <form action="initials"></form>
            <div class = "scores">
-            <div class = "initialsBox"> <label class = "initials" for="name">Initials:</label>
-               <input type="text" id="name" name="name"></input>
-               </div>
-        <div class = end-buttons>
-           <button id="submit">Submit</button>
-           <button id = "redo" onclick="location.reload()">Redo</button></div>`
+           <form class = "initialsBox"> 
+           <label for="Initials"></label><br>
+           <input type="text" id="initials" name="initials" value= "Initials"><br><br>
+           <input class = "submitScore" type="submit" value="Submit">
+           </form> 
+           <button id = "redo" onclick="location.reload()">Redo</button>
+           </div>`
           
        
     };
+
+
 }});
 
+// const highScoreString = localStorage.getItem(HIGH_SCORES);
+// const highScores = JSON.parse(highScoreString) ?? [];
+// const newScore = { score, initials };
+
+// function checkHighScore(score) {
+//     const highScores = JSON.parse(localStorage.getItem(highscores)) ?? [];
+//     const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+    
+//     if (score > lowestScore) {
+//       saveHighScore(score, highScores); // TODO
+//       showHighScores(); // TODO
+//     }
+//   } 0;
+//   function saveHighScore(score, highScores) {
+//     const newScore = { score, initials };
+    
+//     // 1. Add to list
+//     highScores.push(newScore);
+  
+//     // 2. Sort the list
+//     highScores.sort((a, b) => b.score - a.score);
+    
+//     // 3. Select new list
+//     highScores.splice(NO_OF_HIGH_SCORES);
+    
+//     // 4. Save to local storage
+//     localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
+//   };
