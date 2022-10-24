@@ -69,18 +69,28 @@ let timeLeft = 50;
 let currentQuiz = 0;
 let score = 0;
 
+let highScoreName = [];
+let highScoreNum = [];
+
+var nums = JSON.parse(localStorage.getItem('scoreNumbers'))
+var names = JSON.parse(localStorage.getItem('scoreNames'))
+
+if (nums!==null) {
+for(let i = 0; i < nums.length; i++ ){
+    highScoreNum.push(nums[i]);
+    highScoreName.push(names[i]);
+}
+}
 
 function endGame() {
     if (timeLeft === 0) {
         quiz.innerHTML = `
         <div =outTime><h1>OUT OF TIME!! TRY AGAIN!!!</h1>
-        <button id = "redoTime" onclick="location.reload()">Redo</button></div>`
+        <button id = "redoTime" onclick="location.reload()">TRY AGAIN!</button></div>`
         clearInterval(timer);  
     }
 }
     
-
-
 function startTimer() {
     timer = setInterval(function () { 
         if(currentQuiz >= 6) {
@@ -97,8 +107,6 @@ function startTimer() {
       quizTimer.textContent = timeLeft;
     }, 1000);
   };
-
-
 
 
 
@@ -157,48 +165,30 @@ console.log("currentQuiz", currentQuiz)
         } else {
             quiz.innerHTML = `
            <h2>You answered ${score}/${quizInfo.length} questions correctly</h2>
-           <h3>✨Enter your initials and check out the leader board✨<h3>
+           <h3>✨Enter your initials✨<h3>
            <section class="score">
            <div class = "scores">
            <form class = "initialsBox"> 
            <label for="Initials"></label><br>
-           <input type="text" id="initials" name="initials" value= "Initials"><br><br>
+           <input type="text" id="initials" name="initials" placeholder= "Initials"><br><br>
            <input class = "submitScore" type="submit" value="Submit">
            </form> 
-           <button id = "redo" onclick="location.reload()">Redo</button>
+           <h5> 
+           <button id = "redo" onclick=saveHighScore((score/quizInfo.length),document.getElementById('initials').value)>Submit</button>
            </div>`
-          
-       
+           const logInitials = document.getElementById('initials');
+        //    onclick=saveHighScore(eval((score/quizInfo.length)),logInitials);
+        //    setInterval( () => {redoSubmit.addEventListener ("click", saveHighScore (eval(score/quizInfo.length),logInitials.innerText))},1000);
     };
-
 
 }});
 
-// const highScoreString = localStorage.getItem(HIGH_SCORES);
-// const highScores = JSON.parse(highScoreString) ?? [];
-// const newScore = { score, initials };
 
-// function checkHighScore(score) {
-//     const highScores = JSON.parse(localStorage.getItem(highscores)) ?? [];
-//     const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
-    
-//     if (score > lowestScore) {
-//       saveHighScore(score, highScores); // TODO
-//       showHighScores(); // TODO
-//     }
-//   } 0;
-//   function saveHighScore(score, highScores) {
-//     const newScore = { score, initials };
-    
-//     // 1. Add to list
-//     highScores.push(newScore);
-  
-//     // 2. Sort the list
-//     highScores.sort((a, b) => b.score - a.score);
-    
-//     // 3. Select new list
-//     highScores.splice(NO_OF_HIGH_SCORES);
-    
-//     // 4. Save to local storage
-//     localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
-//   };
+
+function saveHighScore(score, name) {
+    console.log (score, name)
+    highScoreName.push(name);
+    highScoreNum.push(score);
+    localStorage.setItem("scoreNumbers", JSON.stringify(highScoreNum));
+    localStorage.setItem("scoreNames", JSON.stringify(highScoreName));
+};
